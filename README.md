@@ -44,7 +44,7 @@
 # restart ComfyUI / 重啟 ComfyUI 即可生效
 ```
 
-Manual install 手動安裝：copy this folder to `<ComfyUI>\custom_nodes\ComfyUI_Accelerated_Downloader` and make sure `aria2c` is on PATH (`winget install aria2.aria2`).
+Manual install：copy this folder to `<ComfyUI>\custom_nodes\ComfyUI_Accelerated_Downloader` and make sure `aria2c` is on PATH (`winget install aria2.aria2`).
 手動安裝：把本資料夾複製到 `<ComfyUI>\custom_nodes\ComfyUI_Accelerated_Downloader`，並確認 `aria2c` 已加入 PATH（`winget install aria2.aria2`）。
 
 ## 📊 Why it's fast 為什麼快
