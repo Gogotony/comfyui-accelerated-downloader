@@ -8,8 +8,12 @@
   <b>Turn a 30-minute model download into a 2-minute one.</b><br>
   <b>把 30 分鐘的模型下載變成 2 分鐘。</b><br>
   Deploying ComfyUI means pulling down <b>hundreds of GB</b> of models — and the
-  official downloader is painfully slow. This accelerator fixes that.<br>
-  部署 ComfyUI 需要下載數百 GB 的模型檔，官方下載器卻慢得令人絕望——本加速器就是為了解決這個問題而生。
+  official downloader is painfully slow.<br>
+  部署 ComfyUI 需要下載數百 GB 的模型檔，官方下載器卻慢得令人絕望。<br>
+  Then you still have to <b>hand-place every file into the right model folder</b> — one by one.<br>
+  接著還得把每個檔案<b>手動一一歸位到正確的模型資料夾</b>。<br>
+  This accelerator fixes <b>both</b>: blazing downloads <b>and</b> auto-placement.<br>
+  本加速器一次解決<b>兩個痛點</b>：下載超快，<b>且自動歸位</b>。
 </p>
 
 <p align="center">
@@ -20,7 +24,7 @@
   <img src="https://img.shields.io/badge/deps-aria2_only-orange" alt="deps">
 </p>
 
-> 中文簡介：ComfyUI 部署需要下載大量模型檔，官方下載速度極慢，作者因此開發了這個加速器——aria2 16 路並發、雙鏡像競速、斷點續傳、批量下載、磁碟預檢與自動歸位，直接嵌入 ComfyUI。
+> 中文簡介：ComfyUI 部署需要下載大量模型檔，官方下載速度極慢，下載完還得手動一一歸位——作者因此開發了這個加速器：aria2 16 路並發、雙鏡像競速、斷點續傳、批量下載、磁碟預檢與**自動歸位**，直接嵌入 ComfyUI。
 
 ---
 
