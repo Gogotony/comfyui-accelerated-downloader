@@ -6,16 +6,24 @@ Real-world result from the project's reference machine (HF direct):
 **~200 MB/s sustained** with 16-way multithreading + automatic mirror racing,
 **zero failed downloads** across a 100-file / 732 GB batch.
 
-> 中文簡介：把 ComfyUI 的模型下載從「單線程慢速等待」變成「多線程加速直達」。內建 aria2 16 路並發、HF/hf-mirror 雙鏡像自動競速、斷點續傳、批量下載、磁碟空間預檢與自動歸位，安裝後直接嵌入 ComfyUI，缺模型時不再走官方慢速下載。
+> 中文簡介：ComfyUI 部署需要下載大量模型檔，官方下載速度極慢，作者因此開發了這個加速器——內建 aria2 16 路並發、HF/hf-mirror 雙鏡像自動競速、斷點續傳、批量下載、磁碟空間預檢與自動歸位，安裝後直接嵌入 ComfyUI，缺模型時不再走官方慢速下載。
 
 ---
 
-## Why this exists
+## The problem — and why I built this
 
-ComfyUI model files are huge (checkpoints easily exceed 6–30 GB) and the
-default single-connection download is painfully slow. Downloads die at 90%,
-there's no batch support, and you only find out the disk is full halfway
-through a 30 GB fetch.
+**Deploying ComfyUI means downloading a huge amount of model files.** Checkpoints,
+VAEs, text encoders, LoRAs, controlnets — each easily 6–30+ GB, and a complete
+template suite needs **hundreds of GB** just to get started.
+
+**The official downloader is painfully slow**: single-connection, no
+multithreading, no mirror fallback, no resume. A single 6 GB checkpoint can
+take **hours**; a full deployment takes days — downloads frequently die at 90%,
+and you only find out the disk is full halfway through a 30 GB fetch.
+
+**That's exactly why I wrote this.** An accelerator that lives inside ComfyUI
+and turns those huge downloads into a fast, reliable, safe batch operation —
+instead of babysitting the official downloader all day.
 
 | | Official single-thread download | **This tool** |
 |---|---|---|
